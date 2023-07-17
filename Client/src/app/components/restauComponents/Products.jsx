@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export function Product({image, nom, description, prix}){
     return(
-        <div className='container mx-auto mt-10 w-96 border-2 rounded-md drop-shadow-sm'>
+        <div className='container mx-auto mt-10 w-90 border-2 rounded-md drop-shadow-sm'>
             <div className=" grid grid-cols-3 gap-0">
                 <div className='w-full h-auto'>
                     <Image className="w-full h-full" alt={`${nom} cover`} src={image}></Image>
