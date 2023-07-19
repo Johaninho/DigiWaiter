@@ -1,21 +1,19 @@
 import React from "react";
 import Link from 'next/link'
 import Image from "next/image";
+import { Box } from "@chakra-ui/react";
 
-const HeaderSingleRestaurant = ({currentPage, backgroundHeader, imageRestaurant}) => {
+const HeaderSingleRestaurant = ({currentPage, imageRestaurant}) => {
     return <header>
-        <div className={`w-full h-[125px] flex bg-[#${backgroundHeader}] items-center justify-between px-5`} >
-            <Link href='/' clea>
-                <Image alt='Back-Icon' width={37} height={37} src='./icon-park-solid_left-two.svg' />
+        <Box className='w-full h-[125px]'
+            backgroundImage={`url('${imageRestaurant}')`}
+            backgroundSize='cover'
+        >
+            <Link href='/' className='absolute left-3 top-3'>
+                <Image alt='Back-Icon' width={40} height={40} src='./btn-quit.svg' />
             </Link>
-            <div>
-                <Image alt={currentPage} width={170} height={100} src={imageRestaurant} />
-            </div>
-            <Link href='/'>
-                <Image alt='Shopping-Cart' width={37} height={37} src='./ps_cart.svg' />
-            </Link>
-        </div>
-        <div className="flex justify-center">
+        </Box>
+        <div className="flex justify-center py-3 border-t">
             <h4 className="font-bold text-base" >{currentPage}</h4>
         </div>
     </header>;
