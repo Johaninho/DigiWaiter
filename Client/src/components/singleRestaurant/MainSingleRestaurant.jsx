@@ -65,7 +65,6 @@ const MainSingleRestaurant = () => {
               <Boissons src='/./assets/WOCO_30_PACKSHOT_0.png' price='1.500' name='World Cola 35cl' />
               <Boissons src='/./assets/WOCO_30_PACKSHOT_0.png' price='1.500' name='World Cola 35cl' />
               <Boissons src='/./assets/WOCO_30_PACKSHOT_0.png' price='1.500' name='World Cola 35cl' />
-              <Boissons src='/./assets/WOCO_30_PACKSHOT_0.png' price='1.500' name='World Cola 35cl' />
             </Box>
           </TabPanel>
         </TabPanels>
