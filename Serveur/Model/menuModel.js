@@ -22,8 +22,12 @@ const menuSchema = mongoose.Schema({
         type : String,
         required : true
     },
-    media : {
+    cataegorie : {
         type : String,
+        required : true
+    },
+    medias : {
+        type : Array,
         required : false
     },
     slug : {
