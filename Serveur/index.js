@@ -10,17 +10,20 @@ import routesorder from "./Routes/orders.js"
 import routesCart from "./Routes/cart.js"
 import routesQR from "./Routes/generatorQR.js"
 import routesMedias from "./Routes/medias.js"
+import cors from "cors";
 
 //initialisation des variables
-const port = 3000
+const port = 8000
 const app = express()
 const httpServer = createServer(app)
 const uri = "mongodb://127.0.0.1/digiwaiter"
 const options = {useNewUrlParser: true, useUnifiedTopology: true}
+
 const io = new Server(httpServer)
 
 //initialisation des middleware et connection à la base de donnée
 mongoose.connect(uri, options)
+app.use(cors())
 app.use(express.static('./public'))
 app.use(express.static('Public'))
 app.use(express.json())
