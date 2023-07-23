@@ -8,8 +8,8 @@ import {Commande} from './pages/Commande.jsx'
 export default function Home() {
   return (
     <ChakraProvider>
-      {/* <SingleRestaurant /> */}
-      <Facture />
+      <SingleRestaurant />
+      {/* <Facture /> */}
       {/* <Commande /> */}
       <FooterSingleRestaurant />
     </ChakraProvider>
