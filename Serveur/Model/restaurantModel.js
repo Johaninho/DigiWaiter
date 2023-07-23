@@ -17,10 +17,6 @@ const restaurantSchema = mongoose.Schema({
         type : Number,
         required : true
     },
-    description : {
-        type : String,
-        required : false
-    },
     slug : {
         type : String,
         required : true
@@ -28,6 +24,14 @@ const restaurantSchema = mongoose.Schema({
     note : {
         type : Number,
         required : false
+    },
+    medias : {
+        type : Array,
+        require : true
+    },
+    id_groupe : {
+        type : String,
+        require : true
     }
 })
 
