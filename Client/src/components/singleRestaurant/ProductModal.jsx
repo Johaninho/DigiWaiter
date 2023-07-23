@@ -34,22 +34,22 @@ export default function ProductModal(img, name, description, prix){
             <div className="mt-5">
                 <div className="flex items-center">
                     <button
-                    className={`w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center ${
-                        count === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-200'
-                    }`}
-                    onClick={decrement}
-                    disabled={count === 1}
+                        className={`w-10 h-10 flex items-center justify-center ${
+                            count === 1 ? 'opacity-50 cursor-not-allowed' : null
+                        }`}
+                        onClick={decrement}
+                        disabled={count === 1}
                     >
-                        <span className="text-2xl font-bold">-</span>
+                        <Image alt="" src="/./iconNegative.svg" ></Image>
                     </button>
 
                     <div className="mx-7 text-xl font-semibold">{count}</div>
                     
                     <button
-                    className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center hover:bg-gray-200"
+                    className="w-10 h-10 flex items-center justify-center"
                     onClick={increment}
                     >
-                        <span className="text-2xl font-bold">+</span>
+                        <Image alt="" src="/./iconPlus.svg"></Image>
                     </button>
                 </div>
                 <Button className="mt-4 w-full" textColor={"white"} backgroundColor={"gray.400"}>
