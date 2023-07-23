@@ -1,10 +1,10 @@
 import { Box, Card, CardBody, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
-const Boissons = ({src, price, name}) => {
+const Boissons = ({src, price, name, onClick}) => {
   return(
     <Box w='130px' h='170px' m='12px' mb='45px'>
-        <Card>
+        <Card onClick={onClick}>
             <Image
                 maxW='130px'
                 h='128px'

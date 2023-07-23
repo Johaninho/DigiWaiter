@@ -1,7 +1,6 @@
 "use client"
-import Image from 'next/image'
 import React, { useState } from "react"
-import productHeader from '/./assets/modalHeader.jpg'
+import ProductSingleRestaurant from './ProductSingleRestaurant'
 import {
     Modal,
     ModalOverlay,
@@ -11,10 +10,11 @@ import {
     ModalBody,
     ModalCloseButton,
     Button,
-    useDisclosure
+    useDisclosure,
+    Image
 } from '@chakra-ui/react'
 
-export function ProductModal(img, name, description, prix){
+export default function ProductModal(img, name, description, prix){
     const { isOpen, onOpen, onClose } = useDisclosure()
     const size = ['sm']
 
@@ -62,7 +62,7 @@ export function ProductModal(img, name, description, prix){
     
     return (
         <>
-        <Button onClick={onOpen}>Product</Button>
+        <ProductSingleRestaurant onClick={onOpen} />
         <Modal blockScrollOnMount={false} isOpen={isOpen} size={size} onClose={onClose}>
             <ModalOverlay/>
             <ModalContent rounded="none">
@@ -77,7 +77,7 @@ export function ProductModal(img, name, description, prix){
                 }}
             >
                 {/* <Image alt="" className='w-full h-full' src={img}></Image>  */}
-                <Image alt="" className='w-full h-full' src={productHeader}></Image> 
+                <Image alt="" w='100%' h='100%' src='/./assets/modalHeader.jpg' /> 
             </ModalHeader>
 
             <ModalCloseButton

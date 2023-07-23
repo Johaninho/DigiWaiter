@@ -1,7 +1,7 @@
 import { Box, Card, CardBody, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 
-const ProductSingleRestaurant = () => {
+const ProductSingleRestaurant = ({onClick}) => {
   return(
     <Box mb='10px'>
         <Card
@@ -11,6 +11,7 @@ const ProductSingleRestaurant = () => {
             maxH='100px'
             bg='#F5F5F5'
             borderColor='#D9D9D9'
+            onClick={onClick}
         >
             <Stack>
                 <CardBody textAlign='start' pt='12px' ps='8px' pb='10px'>

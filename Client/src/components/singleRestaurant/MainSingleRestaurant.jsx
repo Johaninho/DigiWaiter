@@ -1,8 +1,8 @@
 'use client'
 import { Box, Heading, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import React from "react";
-import ProductSingleRestaurant from "./ProductSingleRestaurant";
-import Boissons from "./Boissons";
+import ProductModal from "./ProductModal";
+import DrinkModal from "./DrinkModal";
 
 const MainSingleRestaurant = () => {
 
@@ -36,11 +36,11 @@ const MainSingleRestaurant = () => {
             >
               Nouveautés
             </Heading>
-            <Box className='listProductSingleRestaurant'>
-              <ProductSingleRestaurant />
-              <ProductSingleRestaurant />
-              <ProductSingleRestaurant />
-              <ProductSingleRestaurant />
+            <Box className='listProductModal'>
+              <ProductModal />
+              <ProductModal />
+              <ProductModal />
+              <ProductModal />
             </Box>
           </TabPanel>
           <TabPanel>
@@ -61,10 +61,10 @@ const MainSingleRestaurant = () => {
               Boissons
             </Heading>
             <Box className='Boissons' display='flex' flexWrap='wrap' justifyContent='center' px='25px' flex>
-              <Boissons src='/./assets/WOCO_30_PACKSHOT_0.png' price='1.500' name='World Cola 35cl' />
-              <Boissons src='/./assets/WOCO_30_PACKSHOT_0.png' price='1.500' name='World Cola 35cl' />
-              <Boissons src='/./assets/WOCO_30_PACKSHOT_0.png' price='1.500' name='World Cola 35cl' />
-              <Boissons src='/./assets/WOCO_30_PACKSHOT_0.png' price='1.500' name='World Cola 35cl' />
+              <DrinkModal src='/./assets/WOCO_30_PACKSHOT_0.png' price='1.500' name='World Cola 35cl' />
+              <DrinkModal src='/./assets/WOCO_30_PACKSHOT_0.png' price='1.500' name='World Cola 35cl' />
+              <DrinkModal src='/./assets/WOCO_30_PACKSHOT_0.png' price='1.500' name='World Cola 35cl' />
+              <DrinkModal src='/./assets/WOCO_30_PACKSHOT_0.png' price='1.500' name='World Cola 35cl' />
             </Box>
           </TabPanel>
         </TabPanels>

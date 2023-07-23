@@ -1,7 +1,6 @@
 "use client"
-import Image from 'next/image'
 import React, { useState } from "react"
-import drinkHeader from '/./assets/WOCO_30_PACKSHOT_0.png'
+import Boissons from './Boissons'
 import {
     Modal,
     ModalOverlay,
@@ -11,10 +10,11 @@ import {
     ModalBody,
     ModalCloseButton,
     Button,
-    useDisclosure
+    useDisclosure,
+    Image
 } from '@chakra-ui/react'
 
-export function DrinkModal(img, name, description, prix){
+export default function DrinkModal({imgModal, nameModal, descriptionModal, priceModal, src, price, name}){
     const { isOpen, onOpen, onClose } = useDisclosure()
     const size = ['xs']
 
@@ -34,22 +34,22 @@ export function DrinkModal(img, name, description, prix){
             <div className="mt-5">
                 <div className="flex items-center">
                     <button
-                    className={`w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center ${
-                        count === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-200'
-                    }`}
-                    onClick={decrement}
-                    disabled={count === 1}
+                        className={`w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center ${
+                            count === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-200'
+                        }`}
+                        onClick={decrement}
+                        disabled={count === 1}
                     >
-                        <span className="text-2xl font-bold">-</span>
+                        <p className="text-2xl font-bold">-</p>
                     </button>
 
                     <div className="mx-7 text-xl font-semibold">{count}</div>
                     
                     <button
-                    className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center hover:bg-gray-200"
+                    className="w-10 h-10 rounded-full border border-gray-400 flex items-center text-center justify-center hover:bg-gray-200"
                     onClick={increment}
                     >
-                        <span className="text-2xl font-bold">+</span>
+                        <span className="text-2xl font-bold flex items-center justify-center">+</span>
                     </button>
                 </div>
                 <Button className="mt-4 w-full" textColor={"white"} backgroundColor={"gray.400"}>
@@ -62,7 +62,7 @@ export function DrinkModal(img, name, description, prix){
     
     return (
         <>
-        <Button onClick={onOpen}>Drink</Button>
+        <Boissons onClick={onOpen} price={price} name={name} src={src} />
         <Modal blockScrollOnMount={false} isOpen={isOpen} size={size} onClose={onClose}>
             <ModalOverlay/>
             <ModalContent rounded="none">
@@ -77,7 +77,7 @@ export function DrinkModal(img, name, description, prix){
                 }}
             >
                 {/* <Image alt="" className='w-full h-full' src={img}></Image>  */}
-                <Image alt="" className='w-auto h-[200px] mx-auto' src={drinkHeader}></Image> 
+                <Image alt="" w='auto' h='200px' mx='auto' src='/./assets/WOCO_30_PACKSHOT_0.png'></Image> 
             </ModalHeader>
 
             <ModalCloseButton
