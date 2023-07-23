@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, CardFooter, Heading, Image, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Card, CardBody, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 
 const ProductSingleRestaurant = () => {
