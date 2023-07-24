@@ -57,10 +57,10 @@ export function Tableau({data}){
           > 
             <Thead sx={sxth}>
               <Tr > 
-                <Th sx={th}>Designation</Th>
-                <Th sx={th} border="1px">Quantité</Th>
-                <Th sx={th} borderRight="1px">Prix</Th>
-                <Th sx={th}>Sous total</Th>
+                <Th sx={th} textTransform='capitalize' fontSize='14px' fontWeight='bold'>Désignation</Th>
+                <Th sx={th} border="1px" textTransform='capitalize' fontSize='14px' fontWeight='bold'>Quantité</Th>
+                <Th sx={th} borderRight="1px" textTransform='capitalize' fontSize='14px' fontWeight='bold'>Prix</Th>
+                <Th sx={th} textTransform='capitalize' fontSize='14px' fontWeight='bold'>Sous total</Th>
               </Tr>
             </Thead>
             <Tbody>
