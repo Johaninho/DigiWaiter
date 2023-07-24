@@ -7,7 +7,7 @@ const {
     createCategorie
 } = categorieController
 
-routes.get("/", findRestaurantCategorie)
+routes.get("/:restaurant", findRestaurantCategorie)
 routes.post("/", createCategorie)
 
 export default routes

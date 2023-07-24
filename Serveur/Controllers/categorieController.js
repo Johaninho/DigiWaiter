@@ -5,11 +5,11 @@ const {
 } = categorieModel
 
 const findRestaurantCategorie = async (req, res) => {
-    const categories = await categorie.find()
+    // const categories = await categorie.find()
+    // return res.status(200).json(categories)
+    const {restaurant} = req.params
+    const categories = await categorie.find({restaurant: restaurant})
     return res.status(200).json(categories)
-    // const restaurant = req.body
-    // const categorie = await categorie.find({restaurant: restaurant})
-    // return res.status(200).json(categorie)
 }
 
 const createCategorie = async (req, res) => {
