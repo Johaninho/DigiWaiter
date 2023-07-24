@@ -16,7 +16,7 @@ const Page = () => {
     return (
         <> 
             <HeaderSingleRestaurant currentPage={restaurant.name} imageRestaurant={`/./upload/${restaurant.medias}`} />
-            <MainSingleRestaurant datas={menuList, categories}/>
+            <MainSingleRestaurant datas={categories} data2={menuList} />
             <FooterSingleRestaurant/>
         </>
     )

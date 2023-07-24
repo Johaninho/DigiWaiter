@@ -4,7 +4,7 @@ import React from "react";
 import ProductModal from "./ProductModal";
 import DrinkModal from "./DrinkModal";
 
-const MainSingleRestaurant = ({datas}) => {
+const MainSingleRestaurant = ({datas, data2}) => {
 
   return(
     <Box>
@@ -18,7 +18,7 @@ const MainSingleRestaurant = ({datas}) => {
           bgColor='#FFF'
           color='#394D5F'
         >
-          {datas.categories.map(categorie => {
+          {datas.map(categorie => {
             <Tab _selected={{ color: '#3FCB80'}} fontSize='13px'>{categorie.name}</Tab>
           })}
           {/* <Tab _selected={{ color: '#3FCB80'}} fontSize='13px'>Pizzas</Tab>
@@ -27,24 +27,36 @@ const MainSingleRestaurant = ({datas}) => {
         </TabList>
 
         <TabPanels>
-          <TabPanel className='Nouveautés' >
-            <Heading 
-              as='h5' 
-              fontSize='15px' 
-              textAlign='start' 
-              borderBottom='1px solid #F5F5F5' 
-              mb='10px'
-              pb='3px'
-            >
-              Nouveautés
-            </Heading>
-            <Box className='listProductModal'>
-              <ProductModal />
-              <ProductModal />
-              <ProductModal />
-              <ProductModal />
-            </Box>
-          </TabPanel>
+          {datas.map(categorie => {
+            <TabPanel className='Nouveautés' >
+              <Heading 
+                as='h5' 
+                fontSize='15px' 
+                textAlign='start' 
+                borderBottom='1px solid #F5F5F5' 
+                mb='10px'
+                pb='3px'
+              >
+                {categorie.name}
+              </Heading>
+              
+              <Box className={`${categorie.name != 'Boissons' ? '' : 'flex flex-wrap justify-center px-[25px]'}`}  >
+                {data2.map(menu => {
+                  if(menu.categorie.name == categorie.name) {
+                    if(categorie.name != 'Boissons') {
+                      <ProductModal />
+                    } else {
+                      <DrinkModal src={`/./upload/${menu.medias}`} price={menu.price} name={menu.name} />
+                    }
+                  }
+                })}
+                {/* <ProductModal />
+                <ProductModal />
+                <ProductModal /> */}
+              </Box>
+            </TabPanel>
+          })}
+          
           <TabPanel>
 
           </TabPanel>
@@ -52,7 +64,7 @@ const MainSingleRestaurant = ({datas}) => {
 
           </TabPanel>
           
-          <TabPanel>
+          <TabPanel className='Boissons'>
             <Heading 
               as='h5' 
               fontSize='15px' 
