@@ -4,7 +4,7 @@ import React from "react";
 import ProductModal from "./ProductModal";
 import DrinkModal from "./DrinkModal";
 
-const MainSingleRestaurant = () => {
+const MainSingleRestaurant = ({datas}) => {
 
   return(
     <Box>
@@ -18,10 +18,12 @@ const MainSingleRestaurant = () => {
           bgColor='#FFF'
           color='#394D5F'
         >
-          <Tab _selected={{ color: '#3FCB80'}} fontSize='13px'>Nouveautés</Tab>
-          <Tab _selected={{ color: '#3FCB80'}} fontSize='13px'>Pizzas</Tab>
+          {datas.categories.map(categorie => {
+            <Tab _selected={{ color: '#3FCB80'}} fontSize='13px'>{categorie.name}</Tab>
+          })}
+          {/* <Tab _selected={{ color: '#3FCB80'}} fontSize='13px'>Pizzas</Tab>
           <Tab _selected={{ color: '#3FCB80'}} fontSize='13px'>Tacos</Tab>
-          <Tab _selected={{ color: '#3FCB80'}} fontSize='13px'>Boissons</Tab>
+          <Tab _selected={{ color: '#3FCB80'}} fontSize='13px'>Boissons</Tab> */}
         </TabList>
 
         <TabPanels>
