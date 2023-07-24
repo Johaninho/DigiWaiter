@@ -1,7 +1,8 @@
 import Menu from "../Model/menuModel.js";
 
 const getmenus = async (req, res) => {
-    const allmenus = await Menu.find()
+    const {etablissement} = req.params
+    const allmenus = await Menu.find({etablissement : etablissement})
     return res.status(200).json(allmenus)
 }
 

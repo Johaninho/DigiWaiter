@@ -10,8 +10,8 @@ const {
     deletemenu
 } = menuController
 
-routesmenu.get('/', getmenus)
-routesmenu.get('/:slug', getmenu)
+routesmenu.get('/:etablissement', getmenus)
+routesmenu.get('/restaurant/:slug', getmenu)
 routesmenu.post('/', createmenu)
 routesmenu.put('/:slug', updatemenu)
 routesmenu.delete('/:slug', deletemenu)
