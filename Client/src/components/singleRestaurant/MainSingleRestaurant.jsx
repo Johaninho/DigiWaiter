@@ -57,7 +57,7 @@ const MainSingleRestaurant = ({datas, data2}) => {
             </TabPanel>
           })}
           
-          <TabPanel>
+          {/* <TabPanel>
 
           </TabPanel>
           <TabPanel>
@@ -80,7 +80,7 @@ const MainSingleRestaurant = ({datas, data2}) => {
               <DrinkModal src='/./assets/WOCO_30_PACKSHOT_0.png' price='1.500' name='World Cola 35cl' />
               <DrinkModal src='/./assets/WOCO_30_PACKSHOT_0.png' price='1.500' name='World Cola 35cl' />
             </Box>
-          </TabPanel>
+          </TabPanel> */}
         </TabPanels>
       </Tabs>
     </Box>

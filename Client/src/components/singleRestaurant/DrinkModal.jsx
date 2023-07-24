@@ -14,7 +14,7 @@ import {
     Image
 } from '@chakra-ui/react'
 
-export default function DrinkModal({imgModal, nameModal, descriptionModal, priceModal, src, price, name}){
+export default function DrinkModal({src, price, name}){
     const { isOpen, onOpen, onClose } = useDisclosure()
     const size = ['xs']
 
@@ -53,8 +53,7 @@ export default function DrinkModal({imgModal, nameModal, descriptionModal, price
                     </button>
                 </div>
                 <Button className="mt-4 w-full" textColor={"white"} backgroundColor={"gray.400"}>
-                    {count*1500} Ar
-                    {/* {count*prix} Ar */}
+                    {count*price}
                 </Button>
             </div>
         );
@@ -76,8 +75,7 @@ export default function DrinkModal({imgModal, nameModal, descriptionModal, price
                 borderBottom: "none",
                 }}
             >
-                {/* <Image alt="" className='w-full h-full' src={img}></Image>  */}
-                <Image alt="" w='auto' h='200px' mx='auto' src='/./assets/WOCO_30_PACKSHOT_0.png'></Image> 
+                <Image alt="" w='auto' h='200px' mx='auto' className='w-full h-full' src={img}></Image> 
             </ModalHeader>
 
             <ModalCloseButton
@@ -96,8 +94,7 @@ export default function DrinkModal({imgModal, nameModal, descriptionModal, price
                 // textAlign="center"
             >
                 <p className='mt-1 font-bold'>
-                    {/* {name} */}
-                    World Cola
+                    {name} 
                 </p>
                 <NumberCounter/>
             </ModalBody>

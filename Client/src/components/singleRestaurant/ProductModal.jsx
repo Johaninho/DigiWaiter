@@ -53,8 +53,7 @@ export default function ProductModal(img, name, description, prix){
                     </button>
                 </div>
                 <Button className="mt-4 w-full" textColor={"white"} backgroundColor={"gray.400"}>
-                    {count*12000} Ar
-                    {/* {count*prix} Ar */}
+                    {count*prix} Ar
                 </Button>
             </div>
         );
@@ -62,7 +61,7 @@ export default function ProductModal(img, name, description, prix){
     
     return (
         <>
-        <ProductSingleRestaurant onClick={onOpen} />
+        <ProductSingleRestaurant onClick={onOpen} name={name} description={description} price={prix} image={img}  />
         <Modal blockScrollOnMount={false} isOpen={isOpen} size={size} onClose={onClose}>
             <ModalOverlay/>
             <ModalContent rounded="none">
@@ -76,8 +75,7 @@ export default function ProductModal(img, name, description, prix){
                 borderBottom: "none",
                 }}
             >
-                {/* <Image alt="" className='w-full h-full' src={img}></Image>  */}
-                <Image alt="" w='100%' h='100%' src='/./assets/modalHeader.jpg' /> 
+                <Image alt="" w='100%' h='100%' src={img}></Image> 
             </ModalHeader>
 
             <ModalCloseButton
@@ -95,12 +93,10 @@ export default function ProductModal(img, name, description, prix){
                 justifyContent="center"
             >
                 <p className='mt-1 font-bold'>
-                    {/* {name} */}
-                    Tasty French Tacos
+                    {name}
                 </p>
                 <p className='mt-1 text-[11px]'>
-                    {/* {description} */}
-                    Deux choix de viande - Deux choix de sauce - 1 supplément   
+                    {description}  
                 </p>
                 <NumberCounter/>
             </ModalBody>
