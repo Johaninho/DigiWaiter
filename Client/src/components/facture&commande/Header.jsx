@@ -6,7 +6,7 @@ export function Header({title}){
     return(
         <Box fontFamily="sans-serif">
             <Box backgroundColor="#394D5F" display="flex"  justifyContent="center" alignItems="center" height="80px"> 
-                <Box as="img" src="./assets/Group 4.png" objectFit="cover" height="100%"/>
+                <Box as="img" src="/./assets/Group 4.png" objectFit="cover" height="100%"/>
             </Box>
             <Box
             _after={{
