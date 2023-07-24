@@ -5,6 +5,7 @@ const routesRestaurant = new express.Router()
 const {
     getRestaurants,
     getRestaurant,
+    getGroupeRestuarants,
     createRestaurant,
     updateRestaurant,
     deleteRestaurant
@@ -12,6 +13,7 @@ const {
 
 routesRestaurant.get('/', getRestaurants)
 routesRestaurant.get('/:slug', getRestaurant)
+routesRestaurant.get('/groupe/:groupe', getGroupeRestuarants)
 routesRestaurant.post('/', createRestaurant)
 routesRestaurant.put('/:slug', updateRestaurant)
 routesRestaurant.delete('/:slug', deleteRestaurant)

@@ -21,15 +21,20 @@ const restaurantSchema = mongoose.Schema({
         type : String,
         required : true
     },
+    password : {
+        type : String,
+        required : true
+    },
     note : {
         type : Number,
+        default : 0,
         required : false
     },
     medias : {
-        type : Array,
+        type :  String,
         require : true
     },
-    id_groupe : {
+    groupe : {
         type : String,
         require : true
     }

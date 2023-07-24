@@ -15,9 +15,8 @@ const uploadSingleImage = async (req, res) => {
     if (!req.file) {
         res.send("No file upload")
     } else {
-        console.log(req.file.filename)
         var imgsrc = req.file.filename
-        const newmedia = new mediaModel({name : imgsrc, restaurant : "bucky burger"});
+        const newmedia = new mediaModel({name : imgsrc});
         const insertedmedia= await newmedia.save();
         return res.status(201).json(insertedmedia);
     }
