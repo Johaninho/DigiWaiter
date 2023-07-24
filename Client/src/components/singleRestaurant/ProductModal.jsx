@@ -1,7 +1,6 @@
 "use client"
-import Image from 'next/image'
 import React, { useState } from "react"
-import modalHeader from '../../assets/modalHeader.jpg'
+import ProductSingleRestaurant from './ProductSingleRestaurant'
 import {
     Modal,
     ModalOverlay,
@@ -11,10 +10,11 @@ import {
     ModalBody,
     ModalCloseButton,
     Button,
-    useDisclosure
+    useDisclosure,
+    Image
 } from '@chakra-ui/react'
 
-export function ProductModal(img, name, description, prix){
+export default function ProductModal(img, name, description, prix){
     const { isOpen, onOpen, onClose } = useDisclosure()
     const size = ['sm']
 
@@ -34,22 +34,22 @@ export function ProductModal(img, name, description, prix){
             <div className="mt-5">
                 <div className="flex items-center">
                     <button
-                    className={`w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center ${
-                        count === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-200'
-                    }`}
-                    onClick={decrement}
-                    disabled={count === 1}
+                        className={`w-10 h-10 flex items-center justify-center ${
+                            count === 1 ? 'opacity-50 cursor-not-allowed' : null
+                        }`}
+                        onClick={decrement}
+                        disabled={count === 1}
                     >
-                        <span className="text-2xl font-bold">-</span>
+                        <Image alt="" src="/./iconNegative.svg" ></Image>
                     </button>
 
                     <div className="mx-7 text-xl font-semibold">{count}</div>
                     
                     <button
-                    className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center hover:bg-gray-200"
+                    className="w-10 h-10 flex items-center justify-center"
                     onClick={increment}
                     >
-                        <span className="text-2xl font-bold">+</span>
+                        <Image alt="" src="/./iconPlus.svg"></Image>
                     </button>
                 </div>
                 <Button className="mt-4 w-full" textColor={"white"} backgroundColor={"gray.400"}>
@@ -62,8 +62,8 @@ export function ProductModal(img, name, description, prix){
     
     return (
         <>
-        <Button onClick={onOpen}>Open Modal</Button>
-        <Modal isOpen={isOpen} size={size} onClose={onClose}>
+        <ProductSingleRestaurant onClick={onOpen} />
+        <Modal blockScrollOnMount={false} isOpen={isOpen} size={size} onClose={onClose}>
             <ModalOverlay/>
             <ModalContent rounded="none">
             <ModalHeader 
@@ -77,7 +77,7 @@ export function ProductModal(img, name, description, prix){
                 }}
             >
                 {/* <Image alt="" className='w-full h-full' src={img}></Image>  */}
-                <Image alt="" className='w-full h-full' src={modalHeader}></Image> 
+                <Image alt="" w='100%' h='100%' src='/./assets/modalHeader.jpg' /> 
             </ModalHeader>
 
             <ModalCloseButton
@@ -93,7 +93,6 @@ export function ProductModal(img, name, description, prix){
                 flexDirection="column"
                 alignItems="center"
                 justifyContent="center"
-                // textAlign="center"
             >
                 <p className='mt-1 font-bold'>
                     {/* {name} */}
