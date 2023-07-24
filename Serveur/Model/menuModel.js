@@ -1,4 +1,10 @@
 import mongoose from "mongoose";
+import categorieModel from "./categorieModel.js"
+
+const {
+    categorie,
+    categorieSchema
+} = categorieModel
 
 const menuSchema = mongoose.Schema({
     name : {
@@ -22,12 +28,9 @@ const menuSchema = mongoose.Schema({
         type : String,
         required : true
     },
-    cataegorie : {
-        type : String,
-        required : true
-    },
+    categorie : categorieSchema,
     medias : {
-        type : Array,
+        type : String,
         required : false
     },
     slug : {

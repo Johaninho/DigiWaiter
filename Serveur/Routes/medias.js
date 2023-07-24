@@ -5,10 +5,10 @@ import mediasController from "../Controllers/mediasController.js";
 
 const storage = multer.diskStorage({
     destination: (req, file, callBack) => {
-        callBack(null, '../../Client/public/upload')
+        callBack(null, '../Client/public/upload')
     },
     filename: (req, file, callBack) => {
-        callBack(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+        callBack(null, file.fieldname + Date.now() + path.extname(file.originalname))
     }
 })
 

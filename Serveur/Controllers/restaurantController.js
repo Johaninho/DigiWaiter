@@ -11,8 +11,16 @@ const getRestaurant = async (req, res) => {
     return res.status(200).json(restaurant)
 }
 
+const getGroupeRestuarants = async (req, res) => {
+    const { groupe } = req.params
+    const restaurant = await Restaurant.find({groupe : groupe})
+    return res.status(200).json(restaurant)
+}
+
 const createRestaurant = async (req, res) => {
-    const newRestaurant = new Restaurant({ ...req.body });
+    var data = {...req.body}
+    data.slug = data.name.split(' ').join('-')
+    const newRestaurant = new Restaurant(data);
     const insertedRestaurant = await newRestaurant.save();
     return res.status(201).json(insertedRestaurant);
 }
@@ -32,6 +40,7 @@ const deleteRestaurant = async (req, res) => {
 export default {
     getRestaurants,
     getRestaurant,
+    getGroupeRestuarants,
     createRestaurant,
     updateRestaurant,
     deleteRestaurant

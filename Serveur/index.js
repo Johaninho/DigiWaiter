@@ -10,6 +10,7 @@ import routesorder from "./Routes/orders.js"
 import routesCart from "./Routes/cart.js"
 import routesQR from "./Routes/generatorQR.js"
 import routesMedias from "./Routes/medias.js"
+import routes from "./Routes/categorie.js"
 import cors from "cors";
 
 //initialisation des variables
@@ -35,6 +36,7 @@ app.use('/api/restaurants', routesRestaurant)
 app.use('/api/menus', routesmenu)
 app.use('/api/orders', routesorder)
 app.use('/api/cart', routesCart)
+app.use('/api/categories', routes)
 app.use('/api/QRgenerator', routesQR)
 app.use('/api/medias', routesMedias)
 

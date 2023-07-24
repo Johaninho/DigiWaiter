@@ -12,7 +12,9 @@ const getmenu = async (req, res) => {
 }
 
 const createmenu = async (req, res) => {
-    const newmenu = new Menu({ ...req.body });
+    var data = {...req.body}
+    data.slug = data.name.split(' ').join('-');
+    const newmenu = new Menu(data);
     const insertedmenu = await newmenu.save();
     return res.status(201).json(insertedmenu);
 }
