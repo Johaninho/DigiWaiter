@@ -32,10 +32,10 @@ export function Tableau({data}){
       const rowsdata = data.map((item, i)=>{
         return (
           <Tr key={i}>
-            <Td sx={sxTd}> {item.nom} </Td>
-            <Td sx={sxTd}> {item.quantite} </Td>
-            <Td sx={sxTd}> {item.prix} </Td>
-            <Td sx={sxTd}>{item.quantite * item.prix}</Td>
+            <Td sx={sxTd}> {item.item.name} </Td>
+            <Td sx={sxTd}> {item.quantity} </Td>
+            <Td sx={sxTd}> {item.item.price} </Td>
+            <Td sx={sxTd}>{item.quantity * item.price}</Td>
           </Tr>)
       })
       return rowsdata  
@@ -43,7 +43,7 @@ export function Tableau({data}){
     const total = ()=>{
       let tab = [0, 0]
       data.forEach((item)=>{
-        tab[0] += item.quantite
+        tab[0] += item.quantity
         tab[1] += item.prix * item.quantite
       })
       return tab

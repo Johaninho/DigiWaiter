@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react"
 import Boissons from './Boissons'
+import { addToCart } from "@/Services"
 import {
     Modal,
     ModalOverlay,

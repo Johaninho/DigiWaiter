@@ -5,19 +5,16 @@ import { Logo } from "@/components/facture&commande/Logo";
 import FooterSingleRestaurant from "@/components/singleRestaurant/FooterSingleRestaurant";
 import data from "public/dataFacture.json"
 import { useState } from "react";
-
-const Page = () => {
+import { GetOrder } from "@/Services";
+const orders = GetOrder()
+const Page = (orders) => {
     const [state, setState] = useState(data)
     return(
         <Box display="block" mb="120px" justifyContent="center">
             <Header title="facture"/>
             <Box m="20px">
                 <Logo url={"/assets/logo-restaurantSingle.png"}/>
-                <Tableau data={state} />
-            </Box>
-            <Box m="20px">
-                <Logo url={"/assets/logo-restaurantSingle.png"}/>
-                <Tableau data={state} />
+                <Tableau data={orders.content} />
             </Box>
             <Box
                 position="fixed" bottom="70px"

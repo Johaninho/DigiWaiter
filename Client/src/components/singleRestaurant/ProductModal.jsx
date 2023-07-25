@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react"
 import ProductSingleRestaurant from './ProductSingleRestaurant'
+import { addToCart } from "@/Services"
 import {
     Modal,
     ModalOverlay,
@@ -14,7 +15,7 @@ import {
     Image
 } from '@chakra-ui/react'
 
-export default function ProductModal(img, name, description, prix, plat){
+export default function ProductModal(plat){
     const { isOpen, onOpen, onClose } = useDisclosure()
     const size = ['sm']
 
@@ -109,7 +110,7 @@ export default function ProductModal(img, name, description, prix, plat){
                 textAlign="center"
             >
 
-                <Button onClick={addToCart(plat, plat.slug)} className="w-full" textColor={"white"} backgroundColor={"green.300"}>
+                <Button onClick={addToCart(plat, plat.name)} className="w-full" textColor={"white"} backgroundColor={"green.300"}>
                     Ajouter au panier
                 </Button>
             </ModalFooter>

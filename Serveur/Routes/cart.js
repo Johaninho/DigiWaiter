@@ -20,7 +20,6 @@ routesCart.get('/add/:id', function(req, res, next) {
     var product = Menu.find({slug : productId})
     cart.add(product, productId)
     req.session.cart = cart
-    res.redirect('/api/menus')
 })
 
 routesCart.get('/remove/:id', function(req, res, next) {
@@ -29,7 +28,6 @@ routesCart.get('/remove/:id', function(req, res, next) {
   
     cart.remove(productId);
     req.session.cart = cart;
-    res.redirect('/');
 });
 
 export default routesCart

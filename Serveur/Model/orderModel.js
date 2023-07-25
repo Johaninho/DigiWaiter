@@ -15,7 +15,8 @@ const orderSchema = mongoose.Schema({
     },
     table : {
         type : Number,
-        require : true
+        require : true,
+        default : 1
     },
     slug : {
         type : String,
