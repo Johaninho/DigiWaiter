@@ -4,8 +4,7 @@ import MainSingleRestaurant from '@/components/singleRestaurant/MainSingleRestau
 import {
     getOneRestaurant, 
     getMenuForOneRestaurant, 
-    getCategorieMenu, 
-    getSingleMenu 
+    getCategorieMenu
 } from '@/Services'
 
 const restaurant = getOneRestaurant(slug)

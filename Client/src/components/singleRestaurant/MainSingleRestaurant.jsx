@@ -44,7 +44,7 @@ const MainSingleRestaurant = ({datas, data2}) => {
                 {data2.map(menu => {
                   if(menu.categorie.name == categorie.name) {
                     if(categorie.name != 'Boissons') {
-                      <ProductModal />
+                      <ProductModal plat = {menu}/>
                     } else {
                       <DrinkModal src={`/./upload/${menu.medias}`} price={menu.price} name={menu.name} />
                     }

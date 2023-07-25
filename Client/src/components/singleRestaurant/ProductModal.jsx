@@ -14,7 +14,7 @@ import {
     Image
 } from '@chakra-ui/react'
 
-export default function ProductModal(img, name, description, prix){
+export default function ProductModal(img, name, description, prix, plat){
     const { isOpen, onOpen, onClose } = useDisclosure()
     const size = ['sm']
 
@@ -53,7 +53,7 @@ export default function ProductModal(img, name, description, prix){
                     </button>
                 </div>
                 <Button className="mt-4 w-full" textColor={"white"} backgroundColor={"gray.400"}>
-                    {count*prix} Ar
+                    {count*plat.price} Ar
                 </Button>
             </div>
         );
@@ -61,7 +61,7 @@ export default function ProductModal(img, name, description, prix){
     
     return (
         <>
-        <ProductSingleRestaurant onClick={onOpen} name={name} description={description} price={prix} image={img}  />
+        <ProductSingleRestaurant onClick={onOpen} name={plat.name} description={plat.ingredients} price={plat.price} image={plat.medias}  />
         <Modal blockScrollOnMount={false} isOpen={isOpen} size={size} onClose={onClose}>
             <ModalOverlay/>
             <ModalContent rounded="none">
@@ -109,7 +109,7 @@ export default function ProductModal(img, name, description, prix){
                 textAlign="center"
             >
 
-                <Button className="w-full" textColor={"white"} backgroundColor={"green.300"}>
+                <Button onClick={addToCart(plat, plat.slug)} className="w-full" textColor={"white"} backgroundColor={"green.300"}>
                     Ajouter au panier
                 </Button>
             </ModalFooter>
