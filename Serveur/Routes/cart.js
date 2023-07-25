@@ -10,7 +10,8 @@ routesCart.get('/', function(req, res, next) {
     var cart = new Cart(req.session.cart)
     res.send({
       products: cart.getItems(),
-      totalPrice: cart.totalPrice
+      totalPrice: cart.totalPrice,
+      totalItems: cart.totalItems
     })
 })
 
@@ -20,6 +21,7 @@ routesCart.get('/add/:id', function(req, res, next) {
     var product = Menu.find({slug : productId})
     cart.add(product, productId)
     req.session.cart = cart
+    res.send({type : "success", message : "Le produit a bien été ajouter au panier"})
 })
 
 routesCart.get('/remove/:id', function(req, res, next) {
@@ -28,6 +30,7 @@ routesCart.get('/remove/:id', function(req, res, next) {
   
     cart.remove(productId);
     req.session.cart = cart;
+    res.send({type : "success", message : "le produit a bien été supprimer du panier"})
 });
 
 export default routesCart
